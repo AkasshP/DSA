@@ -12,16 +12,14 @@ class Solution:
                     ransom[ransomNote_List[i]] = 1
                 else:
                      ransom[ransomNote_List[i]] = ransom.get(ransomNote_List[i]) + 1
-            # print(ransom,'ransom dictionary')
-            i = 0
-            while i <= len(magazine_list) - 1:
+
+            for i in range(len(magazine_list)):
                 for j in range(len(check)):
                     if check[j] == magazine_list[i]:
                         if magaz.get(magazine_list[i]) is None:
                             magaz[magazine_list[i]] = 1
                         else:
-                            magaz[magazine_list[i]] = magaz[magazine_list[i]] + 1
-                i = i + 1        
+                            magaz[magazine_list[i]] = magaz[magazine_list[i]] + 1       
             for i in check:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):
                     pass

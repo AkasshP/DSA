@@ -6,10 +6,11 @@ class Solution:
             magaz={}
             ransomNote_set = list(set(ransomNote))
             for i in ransomNote: 
-                if ransom.get(i) is None: 
-                    ransom[i] = 1
-                else:
-                    ransom[i] = ransom.get(i) + 1
+                ransom[i] = ransom.get(i,0) + 1
+                # if ransom.get(i) is None: 
+                #     ransom[i] = 1
+                # else:
+                #     ransom[i] = ransom.get(i) + 1
 
             for i in magazine:
                 if magaz.get(i) is None:

@@ -14,22 +14,22 @@ class Solution:
             print(ransom,'ransom dictionary')
             l1  = list(magazine)
             i = 0
-            flag = False
-            wanted = []
-            unwanted = 0
-            print(l1,'checking')
+            # flag = False
+            # wanted = []
+            # unwanted = 0
+            # print(l1,'checking')
             while i <= len(l1) - 1:
-                flag = False
+                # flag = False
                 for j in range(len(check)):
                     if check[j] == l1[i]:
-                        wanted.append(l1[i])
+                        # wanted.append(l1[i])
                         if magaz.get(l1[i]) is None:
                             magaz[l1[i]] = 1
                         else:
                             magaz[l1[i]] = magaz[l1[i]] + 1
-                        flag = True
-                if flag == False:
-                    unwanted =  unwanted + 1
+                        # flag = True
+                # if flag == False:
+                #     unwanted =  unwanted + 1
                 i = i + 1        
             for i in check:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):

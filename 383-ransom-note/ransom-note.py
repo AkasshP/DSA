@@ -4,6 +4,7 @@ class Solution:
         ransom={}
         magaz={}
         ransomNote_List = list(ransomNote)
+        magazine_list  = list(magazine)
         if len(ransomNote) <= len(magazine):
             check = list(set(ransomNote))
             for i in range(len(ransomNote_List)): 
@@ -11,25 +12,15 @@ class Solution:
                     ransom[ransomNote_List[i]] = 1
                 else:
                      ransom[ransomNote_List[i]] = ransom.get(ransomNote_List[i]) + 1
-            print(ransom,'ransom dictionary')
-            l1  = list(magazine)
+            # print(ransom,'ransom dictionary')
             i = 0
-            # flag = False
-            # wanted = []
-            # unwanted = 0
-            # print(l1,'checking')
-            while i <= len(l1) - 1:
-                # flag = False
+            while i <= len(magazine_list) - 1:
                 for j in range(len(check)):
-                    if check[j] == l1[i]:
-                        # wanted.append(l1[i])
-                        if magaz.get(l1[i]) is None:
-                            magaz[l1[i]] = 1
+                    if check[j] == magazine_list[i]:
+                        if magaz.get(magazine_list[i]) is None:
+                            magaz[magazine_list[i]] = 1
                         else:
-                            magaz[l1[i]] = magaz[l1[i]] + 1
-                        # flag = True
-                # if flag == False:
-                #     unwanted =  unwanted + 1
+                            magaz[magazine_list[i]] = magaz[magazine_list[i]] + 1
                 i = i + 1        
             for i in check:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):

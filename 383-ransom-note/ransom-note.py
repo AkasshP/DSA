@@ -13,11 +13,11 @@ class Solution:
                 else:
                      ransom[ransomNote_List[i]] = ransom.get(ransomNote_List[i]) + 1
 
-            for i in range(len(magazine)):
-                if magaz.get(magazine[i]) is None:
-                    magaz[magazine[i]] = 1
+            for i in magazine:
+                if magaz.get(i) is None:
+                    magaz[i] = 1
                 else:
-                    magaz[magazine[i]] = magaz[magazine[i]] + 1   
+                    magaz[i] = magaz[i] + 1   
                 
             for i in ransomNote_set:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):

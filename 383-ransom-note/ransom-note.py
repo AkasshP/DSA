@@ -30,17 +30,7 @@ class Solution:
                         flag = True
                 if flag == False:
                     unwanted =  unwanted + 1
-                i = i + 1
-            
-            print(magaz,'magazine dictionary')
-            print(unwanted,'count')
-            print(wanted,'wanted list')
-            result  = len(magazine) - unwanted
-            print(result,'result checking')
-            # if len(ransomNote) == result:
-            #     return True 
-            # else:
-            #     return False
+                i = i + 1        
             for i in check:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):
                     pass

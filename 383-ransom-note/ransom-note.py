@@ -1,6 +1,5 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        print(len(ransomNote),'note')
         ransom={}
         magaz={}
         ransomNote_List = list(ransomNote)

@@ -4,7 +4,7 @@ class Solution:
         if len(ransomNote) <= len(magazine):
             ransom={}
             magaz={}
-            ransomNote_set = list(set(ransomNote))
+            ransomNote_set = set(ransomNote)
             for i in ransomNote: 
                 ransom[i] = ransom.get(i,0) + 1
             

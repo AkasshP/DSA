@@ -16,8 +16,7 @@ class Solution:
                     magaz[i] = 1
                 else:
                     magaz[i] = magaz.get(i) + 1  
-                     
-                
+                      
             for i in ransomNote_set:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):
                     pass

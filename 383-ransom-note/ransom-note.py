@@ -5,8 +5,8 @@ class Solution:
         magaz={}
         ransomNote_List = list(ransomNote)
         magazine_list  = list(magazine)
+        check = list(set(ransomNote))
         if len(ransomNote) <= len(magazine):
-            check = list(set(ransomNote))
             for i in range(len(ransomNote_List)): 
                 if ransom.get(ransomNote_List[i]) is None: 
                     ransom[ransomNote_List[i]] = 1

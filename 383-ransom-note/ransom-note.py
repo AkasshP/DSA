@@ -4,8 +4,6 @@ class Solution:
         if len(ransomNote) <= len(magazine):
             ransom={}
             magaz={}
-            ransomNote_List = list(ransomNote)
-            magazine_list  = list(magazine)
             ransomNote_set = list(set(ransomNote))
             for i in ransomNote: 
                 if ransom.get(i) is None: 

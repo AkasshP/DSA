@@ -7,16 +7,9 @@ class Solution:
             ransomNote_set = list(set(ransomNote))
             for i in ransomNote: 
                 ransom[i] = ransom.get(i,0) + 1
-                # if ransom.get(i) is None: 
-                #     ransom[i] = 1
-                # else:
-                #     ransom[i] = ransom.get(i) + 1
-
+            
             for i in magazine:
-                if magaz.get(i) is None:
-                    magaz[i] = 1
-                else:
-                    magaz[i] = magaz.get(i) + 1  
+                magaz[i] = magaz.get(i,0) + 1  
                       
             for i in ransomNote_set:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):

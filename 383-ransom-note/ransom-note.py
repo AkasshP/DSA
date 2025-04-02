@@ -38,7 +38,7 @@ class Solution:
             result  = len(magazine) - unwanted
             print(result,'result checking')
             # if len(ransomNote) == result:
-            #     return True
+            #     return True 
             # else:
             #     return False
             for i in check:
@@ -46,7 +46,6 @@ class Solution:
                     pass
                 else:
                     return False
-                    break
             return True
 
         else:

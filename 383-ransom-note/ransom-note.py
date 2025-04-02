@@ -15,7 +15,8 @@ class Solution:
                 if magaz.get(i) is None:
                     magaz[i] = 1
                 else:
-                    magaz[i] = magaz.get(i) + 1   
+                    magaz[i] = magaz.get(i) + 1  
+                     
                 
             for i in ransomNote_set:
                 if ransom.get(i) == magaz.get(i,0) or ransom.get(i) < magaz.get(i,0):

@@ -13,6 +13,7 @@ class Solution:
         dq.append(root)
         if root:
             level[1] = [root.val]
+            rightView.append(root.val)
         j = 2
         while dq:
             level[j] = []
@@ -27,15 +28,13 @@ class Solution:
                         dq.append(curr_root.right)
                         if curr_root.right.val is not None:
                             level[j].append(curr_root.right.val)
-            print(level,'dict')
             if not level.get(j):
                 level.pop(j)
+            if level.get(j):
+                rightView.append((level[j]).pop())
             j = j + 1
-        for key,values in level.items():
-            print(values)
-            rightView.append(values.pop())
-        # print(rightView,'right-view')
         return rightView
+       
     
         
 

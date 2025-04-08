@@ -32,11 +32,7 @@ class Solution:
             if len(lvl[j]):
                 result.append(lvl[j])
             j += 1
-        # for keys,values in lvl.items():
-        #     if values:
-        #         result.append(values)
         return result
-        # print(result,'result')
         
         
                 

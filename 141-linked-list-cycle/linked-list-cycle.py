@@ -24,9 +24,9 @@ class Solution:
             while fast and fast.next:
                 if slow is fast:
                     return True
-                if fast.next is not None:
-                    slow = slow.next
-                    fast = fast.next.next
+                # if fast.next is not None:
+                slow = slow.next
+                fast = fast.next.next
           
         return False
 

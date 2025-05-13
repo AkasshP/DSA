@@ -6,6 +6,7 @@ class Solution:
             nodes[u].append(v)
             nodes[v].append(u)
         seen = set()
+        #dfs
         def dfs(src,dest):
             if src == dest:
                 return True
@@ -13,7 +14,7 @@ class Solution:
             for i in val:
                 if i not in seen:
                     seen.add(i)
-                    if dfs(i, dest): #dfs
+                    if dfs(i, dest):
                         return True
             return False
         ans = dfs(source,destination)

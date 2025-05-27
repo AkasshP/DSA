@@ -2,7 +2,6 @@ class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         duplicate = {}
         for i in range(len(nums)):
-            print(nums[i],'index')
             if duplicate.get(nums[i]) == 0 or duplicate.get(nums[i]):
                 if abs(duplicate[nums[i]] - i) <= k:
                     return True

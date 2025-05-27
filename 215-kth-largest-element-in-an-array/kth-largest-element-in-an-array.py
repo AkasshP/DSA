@@ -5,6 +5,6 @@ class Solution:
         lar = 0
         for i in nums:
             heapq.heappush(maxq,-i)
-        for i in range(k):
-            lar = heapq.heappop(maxq)
-        return -lar
+        for i in range(k-1):
+            heapq.heappop(maxq)
+        return -maxq[0]

@@ -19,7 +19,6 @@ class Solution:
                         idx = nums.index(num[mid])
                         return idx + 1
                     new_arr = num[mid:]
-                    print(new_arr)
                     return bs(new_arr)  
                 
         return bs(nums)

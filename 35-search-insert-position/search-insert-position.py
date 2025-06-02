@@ -8,7 +8,6 @@ class Solution:
             else:
                 if num[mid] > target:
                     if len(num) == 1:
-                        print(num[mid],'mid checking')
                         idx = nums.index(num[mid])
                         if idx == 0:
                             return idx
@@ -21,8 +20,6 @@ class Solution:
                         return idx + 1
                     new_arr = num[mid:]
                     print(new_arr)
-                    return bs(new_arr)
-
-                    
+                    return bs(new_arr)  
                 
         return bs(nums)

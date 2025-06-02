@@ -15,7 +15,6 @@ class Solution:
                 visited.add(s)
                 l1 = [int(ch) for ch in s]
                 value = sum(list(map(lambda x: happy.setdefault(x, x * x), l1)))
-                print(visited)
                 return happyornot(value)
             else:
                 return False

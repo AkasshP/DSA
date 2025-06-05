@@ -9,7 +9,6 @@ class Solution:
         result = []
         visited = set()
         courseId = [i for i in range(numCourses)]
-        print(courseId,'courseId')
 
         if numCourses and prerequisites:
             for i,j in prerequisites:
@@ -38,11 +37,9 @@ class Solution:
                             dq.append(keys)
                             visited.add(keys)
                 return dq
-            s = src()
 
             def dfs(v): #dfs
                 degree[v] = degree[v] - 1 
-
             def course(dq):
                 while dq:
                     k = dq.popleft()
@@ -52,9 +49,11 @@ class Solution:
                             dfs(v)
                     s = src()
                     course(s)
-
                 if len(result) == numCourses:
                     return True
+                    
+            s = src()
+
             if s:  #no source then false cycle
                 if course(s):
                     return True

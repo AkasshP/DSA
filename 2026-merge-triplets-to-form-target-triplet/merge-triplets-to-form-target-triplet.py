@@ -10,9 +10,6 @@ class Solution:
             set_A = list(filter(lambda x: x <= target[0],list(map(lambda x: x[0],final_triplets))))
             set_B = list(filter(lambda x: x <= target[1],list(map(lambda x:x[1],final_triplets))))
             set_C = list(filter(lambda x: x <= target[2],list(map(lambda x:x[2],final_triplets))))
-            print(set_A)
-            print(set_B)
-            print(set_C)
             #step 3 match the target
             for i in range(len(target)):
                 if i == 0 :

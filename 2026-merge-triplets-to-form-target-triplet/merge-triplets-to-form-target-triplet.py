@@ -2,13 +2,14 @@ class Solution:
     def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
 
         #step 1 valid triplets:
-        new_triplets = [[i[j] for j in range(len(i)) if i[j] <= target[j]] for i in triplets]
-        final_triplets = list(filter(lambda x: len(x) == 3,new_triplets))
-        if final_triplets:
+        valid_triplets = [t for t in triplets if all(t[i] <= target[i] for i in range(3))]
+        
+        if valid_triplets:
             #Step 2 filter based on the indexes basis
-            set_A = list(filter(lambda x: x <= target[0],list(map(lambda x: x[0],final_triplets))))
-            set_B = list(filter(lambda x: x <= target[1],list(map(lambda x:x[1],final_triplets))))
-            set_C = list(filter(lambda x: x <= target[2],list(map(lambda x:x[2],final_triplets))))
+            set_A = [t[0] for t in valid_triplets]
+            set_B = [t[1] for t in valid_triplets]
+            set_C = [t[2] for t in valid_triplets]
+
             #step 3 match the target
             for val, s in zip(target, [set_A, set_B, set_C]):
                 if val not in s:

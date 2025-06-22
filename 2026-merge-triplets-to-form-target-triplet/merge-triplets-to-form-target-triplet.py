@@ -1,7 +1,6 @@
 class Solution:
     def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
 
-
         #step 1 valid triplets:
         new_triplets = [[i[j] for j in range(len(i)) if i[j] <= target[j]] for i in triplets]
         final_triplets = list(filter(lambda x: len(x) == 3,new_triplets))
@@ -11,22 +10,9 @@ class Solution:
             set_B = list(filter(lambda x: x <= target[1],list(map(lambda x:x[1],final_triplets))))
             set_C = list(filter(lambda x: x <= target[2],list(map(lambda x:x[2],final_triplets))))
             #step 3 match the target
-            for i in range(len(target)):
-                if i == 0 :
-                    if target[i] in set_A:
-                        pass
-                    else:
-                        return False
-                if i == 1:
-                    if target[i] in set_B:
-                        pass
-                    else:
-                        return False
-                if i == 2:
-                    if target[i] in set_C:
-                        pass
-                    else:
-                        return False
+            for val, s in zip(target, [set_A, set_B, set_C]):
+                if val not in s:
+                    return False
             return True
         else:
             return False

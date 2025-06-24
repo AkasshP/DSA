@@ -6,32 +6,28 @@ class Solution:
         dq = deque()
 
         def top(i,j):
-            print('top-triggering')
             if i >= r or i <= -1 or j >= c or j <= -1:
                 return
             
-            if  i - 1 >= 0:
-                if grid[i-1][j] == 1:
-                    grid[i-1][j] = 2
-                    dq.append((i-1,j)) 
+            if  i - 1 >= 0 and grid[i-1][j] == 1:
+                grid[i-1][j] = 2
+                dq.append((i-1,j)) 
 
         def down(i,j):
             if i >= r or i <= -1 or j >= c or j <= -1:
                 return
             
-            if i + 1 < r:
-                if grid[i+1][j] == 1:
-                    grid[i+1][j] = 2
-                    dq.append((i+1,j)) 
+            if i + 1 < r and grid[i+1][j] == 1:
+                grid[i+1][j] = 2
+                dq.append((i+1,j)) 
 
         def left(i,j):
             if i >= r or i <= -1 or j >= c or j <= -1:
                 return
 
-            if j-1 >= 0:
-                if grid[i][j-1] == 1:
-                    grid[i][j-1] = 2
-                    dq.append((i,j-1)) 
+            if j-1 >= 0 and grid[i][j-1] == 1:
+                grid[i][j-1] = 2
+                dq.append((i,j-1)) 
     
 
         
@@ -39,10 +35,9 @@ class Solution:
             if i >= r or i <= -1 or j >= c or j <= -1:
                 return
             
-            if j+1 < c:
-                if grid[i][j+1] == 1:
-                    grid[i][j+1] = 2
-                    dq.append((i,j+1)) 
+            if j+1 < c and grid[i][j+1] == 1:
+                grid[i][j+1] = 2
+                dq.append((i,j+1)) 
 
 
         for i in range(len(grid)):
@@ -53,7 +48,6 @@ class Solution:
         mint = 0
         while dq:
             for i in range(len(dq)):
-                print(dq,'checking')
                 i,j = dq.popleft()
                 top(i,j)
                 down(i,j)

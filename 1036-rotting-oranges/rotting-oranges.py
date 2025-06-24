@@ -39,21 +39,26 @@ class Solution:
                 grid[i][j+1] = 2
                 dq.append((i,j+1)) 
 
-
+        #1st step to check if there are any rotten oranges?
         for i in range(len(grid)):
             for j in range(len(grid[i])):
                 if grid[i][j] == 2:
                     dq.append((i,j))
 
-        mint = 0
-        while dq:
-            for i in range(len(dq)):
-                i,j = dq.popleft()
-                top(i,j)
-                down(i,j)
-                left(i,j)
-                right(i,j)
+        #no rotten oranges found directly return it, if not process it
+        if not dq:
+            return -1 if any(1 in row for row in grid) else 0
+        else:
+            mint = 0
+            while dq:
+                for i in range(len(dq)):
+                    i,j = dq.popleft()
+                    top(i,j)
+                    down(i,j)
+                    left(i,j)
+                    right(i,j)
 
-            mint += 1
+                mint += 1
+
         return -1 if any(1 in row for row in grid) else (mint - 1 if mint else mint)
 

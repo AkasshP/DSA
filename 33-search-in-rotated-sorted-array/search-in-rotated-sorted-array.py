@@ -13,12 +13,9 @@ class Solution:
                 right = mid  
 
         rp = left  
-
-        print(rp,'rotation point')
-        left = nums[:rp]
-        right = nums[rp:]
-        print(left)
-        print(right)
+        if rp:
+            left = nums[:rp]
+            right = nums[rp:]
         
 
         def binarySearchR(arr):
@@ -68,12 +65,12 @@ class Solution:
                 else:
                     return -1
         
-        if rp:
+        if rp: #no rotation point then. its sorted
             if right[0] <= target <= right[-1]:
                 return binarySearchR(right)
             else:
                 return binarySearchL(left)
-        else:
+        else: # apply binary search
             return binarySearchL(nums)
 
 

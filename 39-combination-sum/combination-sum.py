@@ -4,12 +4,12 @@ class Solution:
         visited = set()
         new_arr = []
         def combinations(temp):
-            if sum(temp) == target:
+            
+            if sum(temp) == target and tuple(sorted(temp)) not in visited:
                 arr = sorted(temp)
-                if tuple(arr) not in visited:
-                    visited.add(tuple(arr))
-                    new_arr.append(arr)
-                    return 
+                visited.add(tuple(arr))
+                new_arr.append(arr)
+                return
 
             for i in candidates:
                 if i + sum(temp) <= target:

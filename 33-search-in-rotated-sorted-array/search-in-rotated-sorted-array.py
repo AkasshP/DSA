@@ -13,23 +13,19 @@ class Solution:
                 right = mid  
 
         rp = left  
-        if rp:
-            left = nums[:rp]
-            right = nums[rp:]
         
-
-        def binarySearchR(arr):
+        def binarySearch(arr,base):
             if len(arr) > 1:
                 left,right = 0,len(arr) - 1
                 while left < right:
                     if arr[left] == target:
-                        return rp + left
+                        return base + left
                     if arr[right] == target:
-                        return rp + right
+                        return base + right
 
                     mid = (left + right) // 2
                     if arr[mid] == target:
-                        return rp + mid
+                        return base + mid
                     if arr[mid] > target:
                         right = mid
                     else:
@@ -37,41 +33,17 @@ class Solution:
                 return -1
             else:
                 if arr[0] == target:
-                    return rp + 0
+                    return base 
                 else:
                     return -1
 
-        def binarySearchL(arr):
-            if len(arr) > 1:
-                left,right = 0,len(arr) - 1
-                while left < right:
-                    if arr[left] == target:
-                        return left
-                    if arr[right] == target:
-                        return right
-
-                    mid = (left + right) // 2
-                    if arr[mid] == target:
-                        return mid
-
-                    if arr[mid] > target:
-                        right = mid
-                    else:
-                        left = mid + 1
-                return -1
-            else:
-                if arr[0] == target:
-                    return 0
-                else:
-                    return -1
         
-        if rp: #no rotation point then. its sorted
-            if right[0] <= target <= right[-1]:
-                return binarySearchR(right)
-            else:
-                return binarySearchL(left)
-        else: # apply binary search
-            return binarySearchL(nums)
+        if rp == 0: #no rotation point then its sorted
+            return binarySearch(nums, 0)
+        if nums[rp] <= target <= nums[-1]:
+            return binarySearch(nums[rp:], rp)
+        else:
+            return binarySearch(nums[:rp], 0)
 
 
 

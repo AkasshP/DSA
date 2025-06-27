@@ -16,7 +16,6 @@ class Solution:
                 temp.append(str(round(carry)))
             final_result.append(list(reversed(temp)))
 
-        print(final_result,'final_result')
 
         if len(final_result) > 1:
             for i in range(1,len(final_result)):
@@ -24,7 +23,6 @@ class Solution:
                 while len(final_result[i]) != total :
                     final_result[i].append('0')
 
-        print(final_result,'final_result')
         new_result = []
         for i in final_result:
             num = 0

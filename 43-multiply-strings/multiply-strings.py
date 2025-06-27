@@ -10,10 +10,9 @@ class Solution:
                 total = (ord(i) - ord('0')) * (ord(j) - ord('0')) + carry
                 carry = total // 10
                 rem = total % 10
-                x_str = str(rem).split('.')[0]
-                temp.append(x_str)
+                temp.append(str(rem))
             if carry:
-                temp.append(str(round(carry)))
+                temp.append(str(carry))
             final_result.append(list(reversed(temp)))
 
 

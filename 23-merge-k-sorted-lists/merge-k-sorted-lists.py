@@ -3,7 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-from itertools import chain
+import heapq
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         main_arr = []
@@ -19,21 +19,20 @@ class Solution:
             for j in i:
                 j.next = None
 
+        heap = []
+
+        for idx, sub in enumerate(main_arr):
+            if sub:
+                heap.append((sub[0].val, idx))
+        heapq.heapify(heap)
+
         final_result = []
-
-        while any(main_arr):
-            # build a list of (value, list_index) for each non-empty sublist
-            candidates = [
-            (sub[0].val, idx)
-            for idx, sub in enumerate(main_arr)
-            if sub
-            ]
-            # pick the smallest value and its originating index
-            _, winner_idx = min(candidates, key=lambda x: x[0])
-            # pop the head node and append it to your result
-            node = main_arr[winner_idx].pop(0)
+        while heap:
+            val, i = heapq.heappop(heap)
+            node = main_arr[i].pop(0)   
             final_result.append(node)
-
+            if main_arr[i]:
+                heapq.heappush(heap, (main_arr[i][0].val, i))
 
         for i in range(len(final_result)):
             if i + 1 < len(final_result):

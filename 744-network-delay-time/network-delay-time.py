@@ -13,9 +13,12 @@ class Solution:
         heapq.heappush(pq, (0, k))
         while pq:
                 cur_cost, u = heapq.heappop(pq)
-                if u in visited:
-                    continue
-                visited.add(u)
+                if u in cost_dict:
+                    if cur_cost > cost_dict[u]:
+                        continue
+                    if u in visited:
+                        continue
+                    visited.add(u)
                 for i,j in adjacency.get(u, []): 
                     new_cost = cur_cost + j
                     if new_cost < cost_dict.get(i, float('inf')):

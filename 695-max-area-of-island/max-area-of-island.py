@@ -21,6 +21,5 @@ class Solution:
             for j in range(len(grid[i])):
                 if grid[i][j] == 1:
                     val = birection(i,j,0)
-                    print(val,'val')
                     max_area = max(max_area,val)
         return max_area

@@ -11,13 +11,7 @@ class Solution:
         if root:
             dq.append(root)
 
-        def val_conversion(tree):
-            temp = []
-            for i in tree:
-                temp.append(i.val)
-            print(temp,'temp')
-            return temp
-
+        # simple BFS is enough to find a symmetrical
         while dq:
             main_arr = []
             for i in range(len(dq)):

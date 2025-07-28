@@ -4,8 +4,6 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         r,c = len(matrix),len(matrix[0])
-        # main = [[0] * c for _ in range(r)]
-        # k = c - 1
         check = {}
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):

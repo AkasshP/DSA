@@ -1,7 +1,6 @@
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
         h = []
-        citations.sort() #sort the array
         j = 0
         while True:
             temp = []

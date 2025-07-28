@@ -32,7 +32,7 @@ class Solution:
                 left = main_arr[:mid]
                 right = main_arr[mid:]
                 print(left,right)
-                left.reverse()
+                left.reverse() #reverse it for mirror image
                 if left == right:
                     pass
                 else:

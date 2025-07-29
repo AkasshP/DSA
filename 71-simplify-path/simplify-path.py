@@ -2,7 +2,6 @@ class Solution:
     def simplifyPath(self, path: str) -> str:
         main_path = []
         temp = []
-        dot = []
         for i in path:
             if i == '/':
                 if temp and ''.join(temp) != '.' and ''.join(temp) != '..':
@@ -30,9 +29,6 @@ class Solution:
                 pass
             else:
                 main_path.append(''.join(temp))
-
         
-        result = '/'.join(main_path)
-        return '/' + result
-
+        return '/' + '/'.join(main_path)
             

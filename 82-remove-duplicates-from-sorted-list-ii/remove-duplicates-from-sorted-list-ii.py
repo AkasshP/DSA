@@ -46,9 +46,8 @@ class Solution:
             else:
                 return head
         else:
-            head = None #since everyhting is 
+            head = None #since everyhting is skippable
             return head
 
-        return head
         
             

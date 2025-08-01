@@ -44,4 +44,3 @@ class Solution:
             preorder(right)
 
         preorder(root)
-        print(dummy.right,'dummy')

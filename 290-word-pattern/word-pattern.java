@@ -1,6 +1,5 @@
 class Solution {
     public boolean wordPattern(String pattern, String s) {
-        pattern = pattern.trim(); 
         int i = 0;
         char ch;
         String[] words = s.split(" ");
@@ -13,7 +12,6 @@ class Solution {
 
         for (String x : words) {
             ch = char_arr[i];
-            System.out.println(ch);  // For debugging
             if (map.containsKey(ch)) {
                 if (!map.get(ch).equals(x)) {
                     return false;

@@ -18,36 +18,33 @@ class Solution {
         int count = 0;
 
         //edage case
-        if (head == null || k == 0) return head; 
+        if(head == null || head.next == null || k==0) return head;
         while(Dummy != null)
         {
             Dummy = Dummy.next;
             count += 1;
         }
-        //edge case
-        if (count <= 1) return head;
-        if (count > 1 && k != 0)
+
+        int total = count - k;
+        while (total < 0)
         {
-            int total = count - k;
-            while (total < 0)
-            {
-                total = count - Math.abs(total); // update the total with the number of nodes
-            }
+            total = count - Math.abs(total); // update the total with the number of nodes
+        }
             // main edge case don't want to rotate again and again
-            if (total == 0) return head;
-            count = 0;
-            while(Curr != null)
-            {
-                if(total == count)
-                    {
-                        temp = Curr;
-                        prev.next = null;
-                        break;
-                    }
-                prev = Curr;
-                Curr = Curr.next;
-                count += 1;
-            }
+        if (total == 0) return head;
+        count = 0;
+        while(Curr != null)
+        {
+            if(total == count)
+                {
+                    temp = Curr;
+                    prev.next = null;
+                    break;
+                }
+            prev = Curr;
+            Curr = Curr.next;
+            count += 1;
+        }
             Main_head = temp;
             while(temp.next != null)
             {
@@ -55,7 +52,6 @@ class Solution {
             }
             temp.next = head;
             return Main_head;  
-        }
-        return head;
+    
     }
 }

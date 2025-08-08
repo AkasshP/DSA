@@ -10,10 +10,7 @@
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        ListNode Curr = head;
         ListNode temp = null;
-        ListNode prev = null;
-        ListNode Main_head = null;
         int count = 0;
 
         //edage case
@@ -27,24 +24,23 @@ class Solution {
         if (total == 0) return head;
 
         count = 0;
-        while(Curr != null)
+        ListNode prev = null, curr = head;
+        while(curr != null)
         {
             if(total == count)
                 {
-                    temp = Curr;
+                    temp = curr;
                     prev.next = null;
                     break;
                 }
-            prev = Curr;
-            Curr = Curr.next;
+            prev = curr;
+            curr = curr.next;
             count += 1;
         }
-        Main_head = temp;
-        while(temp.next != null)
-        {
-            temp = temp.next;
-        }
+        ListNode Main_head = temp;
+        while(temp.next != null) temp = temp.next;
         temp.next = head;
+
         return Main_head;  
     }
 }

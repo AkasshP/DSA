@@ -10,7 +10,6 @@
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        ListNode Dummy = head;
         ListNode Curr = head;
         ListNode temp = null;
         ListNode prev = null;
@@ -19,19 +18,17 @@ class Solution {
 
         //edage case
         if(head == null || head.next == null || k==0) return head;
-        while(Dummy != null)
-        {
-            Dummy = Dummy.next;
-            count += 1;
-        }
+        
+        for (ListNode p = head; p != null; p = p.next) count++;
 
         int total = count - k;
         while (total < 0)
         {
             total = count - Math.abs(total); // update the total with the number of nodes
         }
-            // main edge case don't want to rotate again and again
+        // main edge case don't want to rotate again and again
         if (total == 0) return head;
+
         count = 0;
         while(Curr != null)
         {
@@ -45,13 +42,12 @@ class Solution {
             Curr = Curr.next;
             count += 1;
         }
-            Main_head = temp;
-            while(temp.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = head;
-            return Main_head;  
-    
+        Main_head = temp;
+        while(temp.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = head;
+        return Main_head;  
     }
 }

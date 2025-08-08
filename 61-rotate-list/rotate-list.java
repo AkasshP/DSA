@@ -40,11 +40,9 @@ class Solution {
             {
                 if(total == count)
                     {
-
                         temp = Curr;
                         prev.next = null;
                         break;
-                    
                     }
                 prev = Curr;
                 Curr = Curr.next;

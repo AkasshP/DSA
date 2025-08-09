@@ -18,8 +18,9 @@ class Solution {
         
         for (ListNode p = head; p != null; p = p.next) count++;
 
+        k %= count;
+        if (k == 0) return head;
         int total = count - k;
-        while (total < 0) total = count - Math.abs(total);
         // main edge case don't want to rotate again and again
         if (total == 0) return head;
 

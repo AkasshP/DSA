@@ -1,8 +1,9 @@
 class Solution {
     public boolean isUgly(int n) {
-        while (n != 1 && n != 0)
+        while (n != 1)
         {
-            System.out.println(n);
+            if (n == 0) return false; //edge case
+
             if (n % 2 == 0)
             {
                 n = n / 2;

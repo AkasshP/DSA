@@ -18,10 +18,9 @@ class Solution {
             }
             else
             {
-                break;
+                return false;
             }
         }
-        if (n == 1) return true;
-        else return false;
+        return true;
     }
 }

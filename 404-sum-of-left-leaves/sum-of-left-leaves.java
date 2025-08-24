@@ -16,7 +16,7 @@
 class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
         Deque<TreeNode> dq = new ArrayDeque<>();
-        ArrayList<Integer> arr = new ArrayList<>();
+        int total = 0;
         TreeNode node;
         if(root != null)
         {
@@ -33,7 +33,7 @@ class Solution {
                     dq.offer(node.left);
                     if(node.left.left == null && node.left.right == null)
                     {
-                        arr.add(node.left.val);
+                        total += node.left.val;
                     }
 
                 }
@@ -44,6 +44,6 @@ class Solution {
             }
         }
 
-    return arr.stream().mapToInt(Integer::intValue).sum();
+    return total;
     }
 }

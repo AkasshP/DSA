@@ -43,12 +43,7 @@ class Solution {
                 }
             }
         }
-        System.out.println(arr);
 
-    int sum = arr
-    .stream()
-    .mapToInt(Integer::intValue)
-    .sum();
-    return sum;
+    return arr.stream().mapToInt(Integer::intValue).sum();
     }
 }

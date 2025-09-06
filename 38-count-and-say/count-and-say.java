@@ -23,7 +23,6 @@ class Solution {
         int cnt = 1;
         for(int i = 1; i < s.length; i++)
         {
-
             if (prev.equals(s[i])) cnt++;
             else 
             {
@@ -41,8 +40,7 @@ class Solution {
         }
         if (cnt > 1)// left over cnt
         {
-            String res = (String.valueOf(cnt) + String.valueOf(prev));
-            temp.add(res);
+            temp.add((String.valueOf(cnt) + String.valueOf(prev)));
         }
         return String.join("",temp);
         

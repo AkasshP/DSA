@@ -3,14 +3,12 @@ class Solution {
         //base case
         if (n == 1) return "1";
 
-
         List<String> arr =  new ArrayList<>();
         // n > 1
         arr.add("11");
         for(int i = 2; i < n; i++)
         {
             String s = arr.remove(arr.size() - 1); // pops the last element
-            System.out.println(s+"string");
             String[] srr = s.split("(?<=.)");
             arr.add(cluster(srr));
         }
@@ -46,7 +44,6 @@ class Solution {
             String res = (String.valueOf(cnt) + String.valueOf(prev));
             temp.add(res);
         }
-        System.out.println(temp);
         return String.join("",temp);
         
     }

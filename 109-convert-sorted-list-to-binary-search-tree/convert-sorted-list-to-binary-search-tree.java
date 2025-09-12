@@ -34,7 +34,6 @@ class Solution {
             arr.add(curr.val);
             curr = curr.next;
         }
-
         return divide(arr,0,arr.size()-1);
     }
     public TreeNode divide(List<Integer> arr,int low,int high)

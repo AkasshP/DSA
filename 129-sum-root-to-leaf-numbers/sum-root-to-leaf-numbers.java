@@ -18,6 +18,10 @@ class Solution {
     List<List<String>> final_list = new ArrayList<>();
     List<Integer> main = new ArrayList<>();
     public int sumNumbers(TreeNode root) {
+        if (root == null)
+        {
+            return 0;
+        }
         dfs(root,arr);
         for(int i = 0; i < final_list.size();i++)
         {

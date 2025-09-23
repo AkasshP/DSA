@@ -2,14 +2,14 @@
 class Solution {
     public String convert(String s, int numRows) {
     
+        if (numRows == s.length()) return s; //edge case
         int i;
         String[] main_str =  s.split("");
-        int col = zigzagColumns(main_str.length,numRows);
+        int col = zigzagColumns(s.length(),numRows);
         String[][] str = new String[numRows][col];
         int j = 0;
         int k = 0;
 
-        if (numRows == main_str.length) return s; //edge case
 
         while(k < main_str.length)
         {
@@ -51,7 +51,6 @@ class Solution {
     if (rem == 0)  extra = 0;
     else if (rem <= r)  extra = 1;              
     else  extra = 1 + (rem - r);   
-
     return cols + extra;
     }
 } 

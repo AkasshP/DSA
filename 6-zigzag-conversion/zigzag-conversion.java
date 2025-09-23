@@ -10,7 +10,6 @@ class Solution {
         int j = 0;
         int k = 0;
 
-
         while(k < main_str.length)
         {
             for(i = 0; i < numRows; i++)
@@ -38,6 +37,7 @@ class Solution {
         }
         return main.toString();
     }
+    
     public static int zigzagColumns(int n, int r) {
     // n = string length, r = numRows
     if (r <= 1 || n <= 1) return n;      

@@ -12,9 +12,6 @@ class Solution {
     public ListNode partition(ListNode head, int x) {
         // Edge Cases
         if (head == null ) return head;
-
-
-
         List<ListNode> left =  new ArrayList<>();
         List<ListNode> right =  new ArrayList<>();
         ListNode current;

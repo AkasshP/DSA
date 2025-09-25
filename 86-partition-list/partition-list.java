@@ -35,6 +35,16 @@ class Solution {
             if (i+1 < right.size()) right.get(i).next = right.get(i+1);
             else right.get(i).next = null; // attach the link here
         }
+        //once after linking delete the memory allocation:
+        for (int i=1; i < left.size(); i++)
+        {
+            left.remove(i); //delete accordingly
+        }
+        for(int i=0; i < right.size(); i++)
+        {
+            right.remove(i); //delete accordingly
+        }
+
         return left.get(0);
     }
 }
